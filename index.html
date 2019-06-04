@@ -1,0 +1,319 @@
+﻿
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<!--문서상단아이콘 link 태그-->
+<link rel="shortcut icon" type="image/x-icon" href="images/title.png" />
+
+<title>백지인의 포토폴리오</title>
+<link rel="stylesheet" href="CSS/master.css" />
+<script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div id="wrap">
+	<header id="header">
+		<div class="toggle mt50"><img src="images/btn_menu.png" alt="토글버튼" /></div>
+            <h2 class="logo mt50">jiin<br />PORTPOLIO</h2>
+		<!--<input type="checkbox" id="toggle" />-->
+		<nav id="main_nav">
+			<ul>
+				<li><a href="#home">HOME</a></li>
+				<li><a href="#portfolio">WEB_DESIGN</a></li>
+				<li><a href="#recent">PRINTING_DESIGN</a></li>
+				<li><a href="#about">ABOUT ME</a></li>
+			</ul>
+		</nav>
+		<script>
+		$(function(){
+			var bCheck=false;
+			$(".toggle").click(function(){
+				bCheck = !bCheck;
+				if(bCheck)
+					$("#main_nav").attr("class","checked");
+				else
+					$("#main_nav").removeAttr("class");
+			});
+
+			$("#main_nav > ul > li").click(function(){
+				$("#main_nav").removeAttr("class");
+			});
+		});
+		</script>
+   
+    
+    <!--탑 네비-->
+    <div class="topnav" id="myTopnav">
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="event.html">웹사이트</a>
+                 <ul class="">
+                <li>01</li>
+                 <li>01</li>
+                 <li>01</li>
+        </ul>
+            </li>
+            <li><a href="event.html">이벤트페이지</a></li>
+             <li><a href="print.html">상세페이지</a></li>
+            <li><a href="print.html">출판디자인</a></li>
+  <li><a href="#about">About</a></li>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+            </ul>
+</div>
+    <!--//탑 네비-->   
+        
+        
+		<!--홈-->
+		<div id="home" class="mb0">
+			<div class="title">
+				<h2>BAEK JI IN</h2>
+				<span>포트폴리오를 방문해주셔서 감사합니다.</span>
+			</div>
+		</div>
+		<!--//홈-->
+	</header>
+
+	<!--포토폴리오-->
+    
+	<div id="portfolio">
+		<div class="portfolio_text"><!--고정text-->
+            <h2>WEB_DESIGN</h2>
+			<p>"반응형 홈페이지, 워드프레스 등의 최신 웹기술을 사용하여 제작된 홈페이지 제작 포트폴리오를 만나보세요.</p>
+			
+		</div>
+		<div id="banner"><!--배너이미지-->
+			<ul class="banner">
+				<li class="active"><img src="images/c_bg1.png" alt="켄싱턴 배너이미지" /></li>
+				<li><img src="images/c_bg2.png" alt="한국수출입은행 배너이미지" /></li>
+				<li><img src="images/c_bg3.png" alt="뚜레쥬르 배너이미지" /></li>
+				<li><img src="images/c_bg4.png" alt="버버리 배너이미지" /></li>
+				<li><img src="images/c_bg5.png" alt="제이에스티나 배너이미지" /></li>
+				<li><img src="images/c_bg6.png" alt="러브캣 배너이미지" /></li>
+			</ul>
+		</div>
+		<div id="buttons">
+			<div id="bg_prev"><img src="images/btn_prev1.png" alt="이전" /></div>
+			<!--div id="bg_s"><img src="images/btn_s1.png" alt="이전" /></div-->
+
+			<div id="bg_next"><img src="images/btn_next1.png" alt="이후" /></div>
+		</div>
+
+		<!--여기서부터-->
+		<script>
+		$(function(){
+			var count=0;
+			var left=0;
+			$("#bg_next").click(function(){
+				count++;
+				left-=1920;
+
+				if(count==6){
+					count=0;
+					left=0;
+				}
+				
+				showPort();
+
+			});
+
+			$("#bg_prev").click(function(){
+				count--;
+				left+=1920;
+
+				if(count==-1){
+					count=5;
+					left=-9600;
+				}
+
+				showPort();
+			});
+
+			function showPort(){
+				$("#banner > ul.banner > li").removeAttr("class");
+				$("#banner > ul.banner > li").eq(count).attr("class","active");
+
+					
+				$(".container > div > img").removeAttr("class");
+				$(".container > div > img").eq(count).attr("class","active");
+				
+				$("#portfolio > article").attr("class","p_text");
+				$("#portfolio > article").eq(count).attr("class","p_text active");
+			}
+		});
+		</script>
+		<div class="container"><!--프로세스-->
+			<div>
+				<img class="active" src="images/responsive1.png" alt="켄싱턴 워드프레스" />
+				<img src="images/responsive2.png" alt="한국수출입은행 워드프레스" />
+				<img src="images/responsive3.png" alt="뚜레쥬르 워드프레스" />
+				<img src="images/responsive4.png" alt="버버리 워드프레스" />
+				<img src="images/responsive5.png" alt="제이에스티나 워드프레스" />
+				<img src="images/responsive6.png" alt="러브캣 워드프레스" />
+			</div>
+		</div><!--//프로세스-->
+		<article class="p_text active"><!--제작설명-->
+				<h2>인강사이트_나도패스</h2>
+				<dl>
+					<dt>Launch</dt>
+					<dd>2019</dd>
+					<dt>참여율 & Web ver.</dt>
+					<dd>디자인100% / 코딩100%</dd>
+					<dd>Responsive Web</dd>
+				</dl>
+				<p><a href="http://www.nadopass.com/"  target="_blank" >사이트 바로가기</a></p>
+		</article><!--//제작설명-->
+		<article class="p_text"><!--제작설명-->
+				<h2>한국수출입은행</h2>
+				<dl>
+					<dt>Launch</dt>
+					<dd>2017년 10월 30일</dd>
+					<dt>참여율 & Web ver.</dt>
+					<dd>디자인100% / 코딩100%</dd>
+					<dd>Responsive Web</dd>
+				</dl>
+				<p><a href="koreaexim/index.html" target="_blank" >사이트 바로가기</a></p>
+		</article><!--//제작설명-->
+		<article class="p_text"><!--제작설명-->
+				<h2>TouslesJours</h2>
+				<dl>
+					<dt>Launch</dt>
+					<dd>2017년 10월 22일</dd>
+					<dt>참여율 & Web ver.</dt>
+					<dd>디자인100% / 코딩100%</dd>
+					<dd>Responsive Web</dd>
+				</dl>
+				<p><a href="touslesjours/index.html" target="_blank">사이트 바로가기</a></p>
+		</article><!--//제작설명-->
+		<article class="p_text"><!--제작설명-->
+				<h2>BURBURY</h2>
+				<dl>
+					<dt>Launch</dt>
+					<dd>2017년 9월 6일</dd>
+					<dt>참여율 & Web ver.</dt>
+					<dd>디자인100% / 코딩100%</dd>
+					<dd>PC ver. Web</dd>
+				</dl>
+				<p><a href="burbury/index.html" target="_blank" >사이트 바로가기</a></p>
+		</article><!--//제작설명-->
+		<article class="p_text"><!--제작설명-->
+				<h2>Jestina</h2>
+				<dl>
+					<dt>Launch</dt>
+					<dd>2017년 7월 13일</dd>
+					<dt>참여율 & Web ver.</dt>
+					<dd>디자인100% / 코딩100%</dd>
+					<dd>PC ver. Web</dd>
+				</dl>
+				<p><a href="jestina/index.html" target="_blank" >사이트 바로가기</a></p>
+		</article><!--//제작설명-->
+		<article class="p_text"><!--제작설명-->
+				<h2>LOVCAT</h2>
+				<dl>
+					<dt>Launch</dt>
+					<dd>2017년 8월 4일</dd>
+					<dt>참여율 & Web ver.</dt>
+					<dd>디자인100% / 코딩100%</dd>
+					<dd>Mobile ver. Web</dd>
+				</dl>
+				<p class="p_1"><a href="lovcat/index.html" target="_blank" >사이트 바로가기</a></p>
+		</article><!--//제작설명-->
+	</div><!--//포토폴리오-->
+	
+	<!--recent최근작업-->
+	<div id="recent">
+		<div><h3>PRINTING_DESIGN</h3></div>
+		<section>
+			<article>
+				<a href="images/randing_01.jpg"  target="_blank" class="work">
+					<div class="img">
+						<img src="images/con1.png" alt="켄싱턴바로가기 이미지" />
+					</div>
+					<div class="title_box">
+						<div class="title">편집디자인 01</div>
+					</div>
+				</a>
+			</article>
+			<article>
+				<a href="koreaexim/index.html" target="_blank" class="work">
+					<div class="img">
+						<img src="images/con2.png" alt="한국수출입은행 바로가기 이미지" />
+					</div>
+					<div class="title_box">
+						<div class="title">한국수출입은행</div>
+					</div>
+				</a>
+			</article>
+			<article>
+				<a href="touslesjours/index.html" target="_blank" class="work">
+					<div class="img">
+						<img src="images/con3.png" alt="뚜레쥬르 바로가기 이미지" />
+					</div>
+					<div class="title_box">
+						<div class="title">touslesjours</div>
+					</div>
+				</a>
+			</article>
+			<article>
+				<a href="burbury/index.html" target="_blank" class="work">
+					<div class="img">
+						<img src="images/con4.png" alt="버버리 바로가기 이미지" />
+					</div>
+					<div class="title_box">
+						<div class="title">burbury</div>
+					</div>
+				</a>
+			</article>
+			<article>
+				<a href="jestina/index.html" target="_blank" class="work">
+					<div class="img">
+						<img src="images/con5.png" alt="제이에스티나 바로가기 이미지" />
+					</div>
+					<div class="title_box">
+						<div class="title">J_estina</div>
+					</div>
+				</a>
+			</article>
+			<article>
+				<a href="lovcat/index.html" target="_blank" class="work">
+					<div class="img">
+						<img src="images/con6.png" alt="러브캣 바로가기 이미지" />
+					</div>
+					<div class="title_box">
+						<div class="title">LOVCAT</div>
+					</div>
+				</a>
+			</article>
+		</section>
+	</div><!--//recent최근작업-->
+	<div id="about">
+		<h2>ABOUT ME</h2>
+		<div class="about">
+			<ul>
+				<li><a href="#">photo</a></li>
+				<li><a href="#">resume</a></li>
+			</ul>
+		</div>
+	</div><!--//about-->IM
+<script>
+	$(document).ready(function() {
+
+    /* Show/hide dot lav labels on hover */
+    $('div.about > ul > li:nth-of-type(2) > h1').hover(
+    	function () {
+			$(this).prev('h1').show();
+		},
+		function () {
+			$(this).prev('h1').hide();
+		}
+    );
+    
+});
+</script>
+
+</div><!--//wrap-->
+</body>
+</html>
+
